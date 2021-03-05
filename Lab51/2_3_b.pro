@@ -6,8 +6,8 @@ predicates
 
 clauses
   delete(_, [], []).
-  delete(X, [X|T], T):- !.
-  delete(X, [H|T], R):- delete(X, T, Rn), R = [H|Rn].
+  delete(X, [X|T], T).
+  delete(X, [H|T], R):- delete(X, T, Rn), R = [H|Rn], !.
   
 goal
   % delete("x", ["b","a","n","a","n","a"], R).
